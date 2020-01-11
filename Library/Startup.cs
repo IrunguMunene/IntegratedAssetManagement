@@ -69,6 +69,14 @@ namespace Library
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            // NOTE: this must go at the end of Configure
+            var serviceScopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
+            using (var serviceScope = serviceScopeFactory.CreateScope())
+            {
+                var dbContext = serviceScope.ServiceProvider.GetService<LibraryContext>();
+                dbContext.Database.EnsureCreated();
+            };
         }
     }
 }

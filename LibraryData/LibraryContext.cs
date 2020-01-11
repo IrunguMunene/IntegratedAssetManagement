@@ -1,6 +1,8 @@
 ﻿using LibraryData.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.IO;
 
 namespace LibraryData
@@ -48,7 +50,6 @@ namespace LibraryData
                 optionsBuilder.UseSqlServer(connectionString);
             }
         }
-
         #endregion Overrides
     }
 }
