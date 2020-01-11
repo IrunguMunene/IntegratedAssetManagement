@@ -13,3 +13,4 @@ The app makes use of Serilog for logging and all logging info is stored in a tex
 E:\Code\ASP.NET Core\IntegratedAssetManagement\Library\bin\Debug\netcoreapp3.1\ErrorLogs.txt. 
 
 This is still work in progress but show cases the basic functionality the system will have once completed.
+
