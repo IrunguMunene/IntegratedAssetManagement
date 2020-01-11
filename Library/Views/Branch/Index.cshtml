@@ -1,0 +1,26 @@
+﻿@model Library.Models.Branch.BranchIndexModel
+
+<h3>Branches</h3>
+<div id="branchIndex">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" id="branchIndexTable">
+        <thead>
+            <tr>
+                <th style="text-align:left">Name</th>
+                <th>Open Now</th>
+                <th>Number Of Assets</th>
+                <th>Number of Patrons</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var branch in Model.Branches)
+            {
+                <tr>
+                    <td style="text-align:left" class="strongTd"><a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id">@branch.Name</a></td>
+                    <td style="text-align:center">@branch.IsOpen</td>
+                    <td style="text-align:center">@branch.NumberOfAssets</td>
+                    <td style="text-align:center">@branch.NumberOfPatrons</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

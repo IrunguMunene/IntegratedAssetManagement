@@ -1,0 +1,30 @@
+﻿@model Library.Models.Patron.PatronIndexModel
+
+<h3>Patrons</h3>
+<div id="patronIndex">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" id="patronIndexTable">
+        <thead>
+            <tr>
+                <th>Profile Link</th>
+                <th style="text-align:left">Name</th>
+                <th>Library Card Number</th>
+                <th>Overdue Fees</th>
+                <th style="text-align:left">Home Library</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var patron in Model.Patrons)
+            {
+                <tr>
+                    <td style="text-align:center" id="patronIcon">
+                        <a asp-controller="Patron" asp-action="Detail" asp-route-id="@patron.Id"><i class="fa fa-user fa-2x"></i></a>
+                    </td>
+                    <td style="text-align:left">@patron.FullName</td>
+                    <td style="text-align:center">@patron.LibraryCardId</td>
+                    <td style="text-align:center">@patron.OverdueFees</td>
+                    <td style="text-align:left">@patron.HomeLibraryBranch</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
